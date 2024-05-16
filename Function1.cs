@@ -13,7 +13,7 @@ namespace FunctionApp_5
 {
     public static class Function1
     {
-        [FunctionName("GetUses")]
+        [FunctionName("Greet")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
@@ -35,7 +35,7 @@ namespace FunctionApp_5
                 new{id=2,name="Raj" }
             };
 
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult("Hello User!!");
         }
     }
 }
